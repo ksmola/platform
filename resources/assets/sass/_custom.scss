@@ -1,0 +1,41 @@
+a {
+    text-decoration: none !important;
+    color:black;
+}
+
+a:hover {
+    color: #32c186;
+}
+
+.navbar {
+    min-height: 15px !important;
+    background-color: #32c186 !important;
+    color: #fff !important;
+}
+
+.navbar a{
+    color: #fff !important;
+}
+
+.navbar a:hover {
+    color: #368464 !important;
+}
+.navbar-tiny {
+    height: 30px;
+    background-color: #353535 !important;
+}
+.navbar-tiny img {
+    height: 60px;
+}
+
+.navbar-nav {
+    margin-left: 2em;
+}
+
+.green {
+    color: #32c186;
+}
+
+.dropdown-menu a {
+    color: #000000 !important;
+}
