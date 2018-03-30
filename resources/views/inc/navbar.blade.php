@@ -1,6 +1,6 @@
 <nav class="navbar navbar-tiny">
   {{--  <img src="/pictures/moki_logo_white.png" alt="test" srcset="">  --}}
-  <img src="{{asset('/pictures/moki_logo_white.png')}}" alt="" srcset="">
+  <a href="/"><img src="{{asset('/pictures/moki_logo_white.png')}}" alt="" srcset=""></a>
 </nav>
 
 <nav class="navbar navbar-expand-md navbar-dark bg-dark navbar-laravel">

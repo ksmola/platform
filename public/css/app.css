@@ -10034,6 +10034,10 @@ a:hover {
   color: #32c186;
 }
 
+.red {
+  color: #c13232;
+}
+
 .dropdown-menu a {
   color: #000000 !important;
 }

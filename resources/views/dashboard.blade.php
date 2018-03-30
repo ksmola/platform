@@ -15,8 +15,12 @@
                     @endif
 
                     <p>You are logged in!</p> 
-                    <p>Administrator Privileges:  {{$isadmin}}</p>
-
+                    <p>Administrator Privileges:  
+                        @if($isadmin)
+                            <i class="fas fa-check-circle green"></i>
+                        ￼@else
+                            <i class="fas fa-times-circle red"></i>
+                        ￼@endif
                 </div>
             </div>
         </div>
