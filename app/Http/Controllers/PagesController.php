@@ -12,14 +12,14 @@ class PagesController extends Controller
     }
 
     public function about(){
-        return view('pages.about');
+        // return view('pages.about');
     }
 
     public function services(){
-        $data = array(
-            'title' => 'Services', 
-            'services' => ['Web Design', 'Programming', 'etc']
-        );
-        return view('pages.services')->with($data);
+        // $data = array(
+        //     'title' => 'Services', 
+        //     'services' => ['Web Design', 'Programming', 'etc']
+        // );
+        // return view('pages.services')->with($data);
     }
 }

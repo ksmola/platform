@@ -14,7 +14,9 @@
                         </div>
                     @endif
 
-                    You are logged in!
+                    <p>You are logged in!</p> 
+                    <p>Administrator Privileges:  {{$isadmin}}</p>
+
                 </div>
             </div>
         </div>

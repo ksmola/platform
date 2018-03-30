@@ -23,6 +23,14 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        return view('dashboard');
+
+        if (auth()->user()->is_admin) {
+            $isadmin = 'yes';
+        }
+        else {
+            $isadmin = "no";
+        }
+
+        return view('dashboard')->with('isadmin', $isadmin);
     }
 }

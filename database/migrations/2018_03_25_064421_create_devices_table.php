@@ -16,7 +16,7 @@ class CreateDevicesTable extends Migration
         Schema::create('devices', function (Blueprint $table) {
             $table->increments('id');
             $table->string('device_id');  //hardware dependent ID
-            $table->string('user');
+            $table->integer('user_id');
             $table->string('imei');       //IMEI
             $table->string('position');   //last GPS position  
             $table->string('token');      //current active token

@@ -1,9 +1,16 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="jumbotron text-center">
-        <h1>{{$title}}</h1>
-        <p>Gotta log in</p>
-        <button class="btn btn-primary">Sign In</button>
-    </div>
+@guest
+<div class="jumbotron text-center">
+<h1>please:</h1>
+<a class="btn btn-primary" href="/register">Register</a>    
+<a class="btn btn-primary" href="/login">Sign In</a>
+</div>
+@else
+
+hi
+        {{--  <h1>{{$title}}</h1>  --}}
+<br>
+@endguest 
 @endsection

@@ -12,8 +12,10 @@
                 {{Form::text('imei', $device->imei, ['class' => 'form-control', 'placeholder' => 'IMEI'])}}
         </div>
         <div class="form-group">
-            {{Form::label('user', 'Assign to user')}}
-            {{Form::text('user', $device->user, ['class' => 'form-control', 'placeholder' => 'Email'])}}
+            @if(auth()->user()->is_admin) 
+                {{Form::label('user', 'Assign to user')}}
+                {{Form::text('user', $device->user_id, ['class' => 'form-control', 'placeholder' => 'user_id'])}}
+            @endif
         </div>
         {{Form::hidden('_method', 'PUT')}}
         <div class="row">

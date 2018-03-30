@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Device;
+use App\User;
 
 class DevicesController extends Controller
 {
@@ -14,7 +15,11 @@ class DevicesController extends Controller
      */
     public function index()
     {
-        $devices = Device::orderBy('device_id', 'asc')->paginate(5);
+        if(auth()->user()->is_admin) {
+            $devices = Device::orderBy('device_id', 'asc')->paginate(5);
+            return view('devices.index')->with('devices', $devices);
+        }
+        $devices = Device::where('user_id', auth()->user()->id)->orderBy('device_id', 'asc')->paginate(5);
         return view('devices.index')->with('devices', $devices);
     }
 

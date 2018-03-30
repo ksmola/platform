@@ -22,17 +22,19 @@
                 <li class="nav-item">
                   <a class="nav-link" href="/"><i class="fas fa-lg fa-home"></i> Home</a>
                 </li>
-                <li class="nav-item">
+                {{--  <li class="nav-item">
                   <a class="nav-link" href="/about">About</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="/services">Services</a>
-                </li>
+                </li>  --}}
                 <li class="nav-item">
-                  <a class="nav-link" href="/devices"><i class="fas fa fa-box"></i> Devices</a>
+                  <a class="nav-link" href="/devices"><i class="fas fa-box"></i> Devices</a>
                 </li>
               </ul>
         @endguest
+
+
 
             <!-- Right Side Of Navbar -->
             <ul class="navbar-nav ml-auto">
@@ -46,6 +48,7 @@
                         </a>
 
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="/dashboard">Settings</a>
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                 onclick="event.preventDefault();
                                               document.getElementById('logout-form').submit();">
