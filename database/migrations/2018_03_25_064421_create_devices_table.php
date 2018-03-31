@@ -15,12 +15,13 @@ class CreateDevicesTable extends Migration
     {
         Schema::create('devices', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('device_id');  //hardware dependent ID
-            $table->integer('user_id');
-            $table->string('imei');       //IMEI
-            $table->longText('position');   //last GPS position  
-            $table->string('token');      //current active token
-            $table->string('new_token');  //newly received but not yet active token
+            $table->string('device_id');    //hardware dependent ID
+            $table->foreign('user_id')->references('id')->on('users'); //get user_id from users table
+            $table->string('imei');         //IMEI
+            $table->decimal('lng', 10, 7);  //last longitudinal GPS 
+            $table->decimal('lat', 10, 7);  //last latitudinal GPS position  
+            $table->string('token');        //current active token
+            $table->string('new_token');    //newly received but not yet active token
             $table->dateTime('last_request_received'); //last new-token request
             $table->dateTime('last_token_received');   //time of new token received
             $table->dateTime('token_created');         //token created
