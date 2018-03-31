@@ -15,16 +15,6 @@ class UnlockController extends Controller
 
     public function unlock(Request $request) {
         
-        //$data = $request->json()->all();
-        // $coach_uuid = $data['coach']['uuid'];
-        // $category_uuid = $data['category']['uuid'];
-        $device = new Device;
-        $device->position = $request;
-        $device->save();
-
-
-        return "stored!";
-
         $this->validate($request, [
             'deviceid' => 'required', 
         ]);
