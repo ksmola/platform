@@ -16,7 +16,7 @@ class UnlockController extends Controller
     public function unlock(Request $request) {
 
         $device = new Device;
-        $device->position = $request->data;
+        $device->position = $request['payload'];
         $device->save();
 
         return "stored!";
