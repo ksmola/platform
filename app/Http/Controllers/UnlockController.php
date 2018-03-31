@@ -19,7 +19,7 @@ class UnlockController extends Controller
             'deviceid' => 'required', 
         ]);
 
-        $device = Device::where('deviceid', $request->device_id)->first();
+        $device = Device::where('device_id', $request->deviceid)->first();
         $device->token_created = now()->toDateTimeString();
 
         $device->new_token = (bin2hex(random_bytes(16)));
@@ -33,7 +33,7 @@ class UnlockController extends Controller
             'deviceid' => 'required', 
         ]);
 
-        $device = Device::where('deviceid', $request->device_id)->first();
+        $device = Device::where('device_id', $request->deviceid)->first();
         $device->last_request_received = now()->toDateTimeString();
         $device->responded = now()->toDateTimeString();
         if ($device->token !== $device->new_token) {
