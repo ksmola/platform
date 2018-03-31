@@ -3,9 +3,35 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Device;
 
 class UnlockController extends Controller
 {
+
+    // public function __construct()
+    // {
+    //     $this->middleware('auth');
+    // }
+
+    public function unlock(Request $request) {
+        // $request->hasHeader('key');
+        //$request->accepts($contentTypes)
+        // return $request->header();
+        // return $request;
+        //return $request->device_id;
+        
+        $this->validate($request, [
+            'device_id' => 'required', 
+        ]);
+
+        $device = Device::where('device_id', $request->device_id)->first();
+        $new_token = bin2hex(random_bytes(16));
+        $device->new_token = (bin2hex(random_bytes(16)));
+        $device->save();
+        return $device;
+
+    }
+
     /**
      * Display a listing of the resource.
      *

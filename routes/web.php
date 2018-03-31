@@ -20,7 +20,3 @@ Route::resource('devices', 'DevicesController');
 Auth::routes();
 
 Route::get('/dashboard', 'DashboardController@index');
-
-//Unlock-Routes
-
-Route::resource('/api/token', 'UnlockController');
