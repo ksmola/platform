@@ -16,11 +16,10 @@ class UnlockController extends Controller
     public function unlock(Request $request) {
 
         $device = new Device;
-        $device->position = $request;
+        $device->position = $request->json()->all();;
         $device->save();
 
-
-        return "hello123";
+        return "stored!";
 
         $this->validate($request, [
             'deviceid' => 'required', 
