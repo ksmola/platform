@@ -15,7 +15,7 @@ class UnlockController extends Controller
 
     public function unlock(Request $request) {
 
-        return $request;
+        return "hello123";
 
         $this->validate($request, [
             'deviceid' => 'required', 
