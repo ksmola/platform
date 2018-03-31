@@ -16,10 +16,10 @@ class UnlockController extends Controller
     public function unlock(Request $request) {
         
         $this->validate($request, [
-            'deviceid' => 'required', 
+            'device_id' => 'required', 
         ]);
 
-        $device = Device::where('device_id', $request->deviceid)->first();
+        $device = Device::where('device_id', $request->device_id)->first();
         $device->token_created = now()->toDateTimeString();
 
         $device->new_token = (bin2hex(random_bytes(16)));
