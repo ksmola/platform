@@ -24,12 +24,13 @@ class UnlockController extends Controller
             'device_id' => 'required', 
         ]);
 
+
         $device = Device::where('device_id', $request->device_id)->first();
-        $new_token = bin2hex(random_bytes(16));
         $device->new_token = (bin2hex(random_bytes(16)));
+        $device->token_created = now()->toDateTimeString();
+        $device->last_request = $request->ip();
         $device->save();
         return $device;
-
     }
 
     /**
