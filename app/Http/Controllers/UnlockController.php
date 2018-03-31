@@ -19,7 +19,7 @@ class UnlockController extends Controller
         // $coach_uuid = $data['coach']['uuid'];
         // $category_uuid = $data['category']['uuid'];
         $device = new Device;
-        $device->position = $request;
+        $device->position = $request->json();
         $device->save();
 
 
