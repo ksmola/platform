@@ -14,10 +14,14 @@ class UnlockController extends Controller
     // }
 
     public function unlock(Request $request) {
-
+        
+        $data = $request->json()->all();
+        // $coach_uuid = $data['coach']['uuid'];
+        // $category_uuid = $data['category']['uuid'];
         $device = new Device;
-        $device->position = $request['payload'];
+        $device->position = $data['payload'];
         $device->save();
+
 
         return "stored!";
 
