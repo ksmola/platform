@@ -3,12 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\User;
 
 class PagesController extends Controller
 {
     public function index(){
         $title = 'Good day!';
-        return view('pages.index', compact('title'));
+        $user = User::where('id', auth()->user()->id)->first();
+        return view('pages.index', compact('title'))->with('user', $user);
     }
 
     public function about(){

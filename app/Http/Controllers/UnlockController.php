@@ -14,23 +14,35 @@ class UnlockController extends Controller
     // }
 
     public function unlock(Request $request) {
-        // $request->hasHeader('key');
-        //$request->accepts($contentTypes)
-        // return $request->header();
-        // return $request;
-        //return $request->device_id;
-        
+
         $this->validate($request, [
             'device_id' => 'required', 
         ]);
 
-
         $device = Device::where('device_id', $request->device_id)->first();
-        $device->new_token = (bin2hex(random_bytes(16)));
         $device->token_created = now()->toDateTimeString();
-        $device->last_request = $request->ip();
+
+        $device->new_token = (bin2hex(random_bytes(16)));
         $device->save();
         return $device;
+    }
+
+    public function token_received(Request $request) {
+
+        $this->validate($request, [
+            'device_id' => 'required', 
+        ]);
+
+        $device = Device::where('device_id', $request->device_id)->first();
+        $device->last_request_received = now()->toDateTimeString();
+        $device->responded = now()->toDateTimeString();
+        if ($device->token !== $device->new_token) {
+            $device->token = $device->new_token;
+            $device->token_updated = now()->toDateTimeString();
+        }
+        $device->save();
+        return $device;
+
     }
 
     /**

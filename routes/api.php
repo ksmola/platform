@@ -20,3 +20,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 //Route::resource('token', 'UnlockController');
 
 Route::post('unlock', 'UnlockController@unlock');
+Route::post('update', 'UnlockController@token_received');
