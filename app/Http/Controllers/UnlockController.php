@@ -30,10 +30,10 @@ class UnlockController extends Controller
     public function token_received(Request $request) {
 
         $this->validate($request, [
-            'deviceid' => 'required', 
+            'device_id' => 'required', 
         ]);
 
-        $device = Device::where('device_id', $request->deviceid)->first();
+        $device = Device::where('device_id', $request->device_id)->first();
         $device->last_request_received = now()->toDateTimeString();
         $device->responded = now()->toDateTimeString();
         if ($device->token !== $device->new_token) {
