@@ -18,7 +18,7 @@ class CreateDevicesTable extends Migration
             $table->string('device_id');  //hardware dependent ID
             $table->integer('user_id');
             $table->string('imei');       //IMEI
-            $table->string('position');   //last GPS position  
+            $table->longText('position');   //last GPS position  
             $table->string('token');      //current active token
             $table->string('new_token');  //newly received but not yet active token
             $table->dateTime('last_request_received'); //last new-token request
