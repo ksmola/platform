@@ -14,10 +14,10 @@
 
     @if(count($devices) > 0)
         @foreach($devices as $device)
-        <a href="/devices/{{$device->id}}">
+        <a href="/devices/{{$device->device_id}}">
             <div class="list-group">
                 <li class="list-group-item mt-1 mb-1">
-                    <h4>{{$device->device_id}}</h4>
+                    <h4>{{$device->name}}</h4>
                     <small>IMEI: {{$device->imei}}</small>
                 </li>
             </div></a>
