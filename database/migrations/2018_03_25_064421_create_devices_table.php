@@ -15,8 +15,8 @@ class CreateDevicesTable extends Migration
     {
         Schema::create('devices', function (Blueprint $table) {
             // $table->increments('id');
-            $table->primary('id')->unique();  //hardware dependent ID
-            $table->foreign('user_id')->references('id')->on('users');    //FK!
+            $table->primary('id');  //hardware dependent ID primary
+            $table->foreign('user_id')->references('id')->on('users');    //FK
             $table->string('imei')->unique();         //IMEI
             $table->integer('iccid')->unique();        //ICCID
             $table->integer('link_id')->unique();       //hologram link id
