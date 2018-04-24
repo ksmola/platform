@@ -17,7 +17,7 @@ class PagesController extends Controller
         // return view('pages.about');
     }
 
-    public function services(){
+    public function tracking(){
         // $data = array(
         //     'title' => 'Services', 
         //     'services' => ['Web Design', 'Programming', 'etc']
