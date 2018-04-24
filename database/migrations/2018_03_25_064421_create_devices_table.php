@@ -22,8 +22,8 @@ class CreateDevicesTable extends Migration
             $table->string('imei')->unique();         //IMEI
             $table->integer('iccid')->unique();        //ICCID
             $table->integer('link_id')->unique();       //hologram link id
-            $table->decimal('lat', 10, 7);  //last longitudinal GPS 
-            $table->decimal('lng', 10, 7);  //last latitudinal GPS position  
+            $table->decimal('lat', 10, 7);  //last latitudinal GPS 
+            $table->decimal('lng', 10, 7);  //last longitudinal GPS position  
             $table->string('token');        //current active token
             $table->string('new_token');  //newly received but not yet active token
             $table->dateTime('token_updated');         //token renewed

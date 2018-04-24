@@ -18,8 +18,8 @@ class CreateAlertsTable extends Migration
             $table->integer('device_id');
             $table->foreign('device_id')->references('id')->on('devices'); 
             $table->timestamp('time'); //time of position, not time when db got updated
-            $table->decimal('lat', 10, 7);  //last longitudinal GPS 
-            $table->decimal('lng', 10, 7);  //last latitudinal GPS position  
+            $table->decimal('lat', 10, 7);  //last latitudinal GPS 
+            $table->decimal('lng', 10, 7);  //last longitudinal GPS position  
             $table->timestamps();
         });
     }

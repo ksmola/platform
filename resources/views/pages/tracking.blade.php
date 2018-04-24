@@ -2,8 +2,12 @@
 
 @section('content')
 
+@guest
+{{-- guest view --}}
+@else
+
     <h1>{{$title}}</h1>
-    <p>This is the Laravel Services:</p>
+    <p>recent positions:</p>
     @if(count($services) >0)
         <ul class="list-group">
             @foreach($services as $service)
@@ -11,5 +15,5 @@
             @endforeach
         </ul>
     @endif
-
+@endguest
 @endsection
