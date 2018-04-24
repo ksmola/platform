@@ -15,6 +15,7 @@ class CreateAlertsTable extends Migration
     {
         Schema::create('alerts', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('device_id');
             $table->foreign('device_id')->references('id')->on('devices'); 
             $table->timestamp('time'); //time of position, not time when db got updated
             $table->decimal('lat', 10, 7);  //last longitudinal GPS 
