@@ -1,10 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
-
-use Illuminate\Http\Request;
 use App\Device;
 use App\User;
+use Illuminate\Http\Request;
 
 class DevicesController extends Controller
 {
@@ -13,7 +12,7 @@ class DevicesController extends Controller
     {
         $this->middleware('auth');
     }
-    
+
     /**
      * Display a listing of the resource.
      *
@@ -21,7 +20,7 @@ class DevicesController extends Controller
      */
     public function index()
     {
-        if(auth()->user()->is_admin) {
+        if (auth()->user()->is_admin) {
             $devices = Device::orderBy('device_id', 'asc')->paginate(5);
             return view('devices.index')->with('devices', $devices);
         }
@@ -48,7 +47,7 @@ class DevicesController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'device_id' => 'required', 
+            'device_id' => 'required',
 
         ]);
 
@@ -96,7 +95,7 @@ class DevicesController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-            'device_id' => 'required', 
+            'device_id' => 'required',
 
         ]);
 

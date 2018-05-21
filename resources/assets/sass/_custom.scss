@@ -1,3 +1,6 @@
+html, body {
+    height:100%;
+}
 a {
     text-decoration: none !important;
     color:black;
@@ -8,7 +11,8 @@ a:hover {
 }
 
 .navbar {
-    min-height: 15px !important;
+    min-height: 6% !important;
+    height: 6%;
     background-color: #32c186 !important;
     color: #fff !important;
 }
@@ -17,19 +21,22 @@ a:hover {
     color: #fff !important;
 }
 
+.nav-item {
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
 .navbar a:hover {
     color: #368464 !important;
 }
+
 .navbar-tiny {
-    height: 30px;
+    min-height: 4% !important;
+    height: 4%;
     background-color: #353535 !important;
 }
 .navbar-tiny img {
     height: 60px;
-}
-
-.navbar-nav {
-    margin-left: 2em;
 }
 
 .green {
@@ -43,3 +50,8 @@ a:hover {
 .dropdown-menu a {
     color: #000000 !important;
 }
+
+#map {
+    height: 100%;
+    overflow-y: hidden;
+  }

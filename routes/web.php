@@ -14,7 +14,8 @@
 
 Route::get('/', 'PagesController@index');
 Route::get('/about', 'PagesController@about');
-Route::get('/tracking', 'PagesController@tracking');
+Route::get('/tracking', 'PositionController@index');
+Route::post('/tracking', 'PositionController@getpositions');
 
 Route::resource('devices', 'DevicesController');
 Auth::routes();

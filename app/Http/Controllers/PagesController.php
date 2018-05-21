@@ -17,12 +17,12 @@ class PagesController extends Controller
         // return view('pages.about');
     }
 
-    public function tracking(){
-        return view('pages.tracking');
-        // $data = array(
-        //     'title' => 'Services', 
-        //     'services' => ['Web Design', 'Programming', 'etc']
-        // );
-        // return view('pages.services')->with($data);
-    }
+    // public function tracking(){
+    //     return view('pages.tracking');
+    //     // $data = array(
+    //     //     'title' => 'Services', 
+    //     //     'services' => ['Web Design', 'Programming', 'etc']
+    //     // );
+    //     // return view('pages.services')->with($data);
+    // }
 }

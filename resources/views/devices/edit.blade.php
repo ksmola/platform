@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+<div class="container">
     <h1>Edit Device</h1>       
     {!! Form::open(['action' => ['DevicesController@update', $device->id], 'method' => 'POST']) !!}
         <div class="form-group">
@@ -29,5 +30,6 @@
             {{Form::submit('Delete', ['class' => 'btn btn-danger mt-1 mb-1'])}}
         </div>
         </div>
+    </div>
     {!! Form::close() !!}
 @endsection

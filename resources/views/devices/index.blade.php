@@ -7,6 +7,7 @@
     exit();
     ?>
     @else
+    <div class="container">
     <h1>Devices</h1>              
     <p>Overview of all your mokis</p>
     <a class="float-right" href="/devices/create"><i class="green fas fa-plus-circle"></i> Add moki</a>
@@ -26,6 +27,7 @@
     @else
         <h3>Error: no mokis found!</h3>
     @endif
+        </div>
     @endguest
 
 @endsection
