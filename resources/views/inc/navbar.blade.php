@@ -20,10 +20,10 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                  <a class="nav-link" href="/"><i class="fas fa-lg fa-home"></i> Home</a>
+                  <a class="nav-link" href="/"><i class="fas fa-home"></i> Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/tracking"><i class="fas fa-lg fa-map-marker"></i> Tracking</a>
+                    <a class="nav-link" href="/tracking"><i class="fas fa-map-marker"></i> Tracking</a>
                   </li>
                 {{--  <li class="nav-item">
                   <a class="nav-link" href="/about">About</a>

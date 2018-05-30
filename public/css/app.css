@@ -10011,12 +10011,11 @@ a:hover {
 .navbar {
   min-height: 6% !important;
   height: 6%;
-  background-color: #32c186 !important;
   color: #fff !important;
 }
 
 .navbar a {
-  color: #fff !important;
+  color: gainsboro !important;
 }
 
 .nav-item {
@@ -10025,13 +10024,17 @@ a:hover {
 }
 
 .navbar a:hover {
-  color: #368464 !important;
+  color: #ffffff !important;
+}
+
+.nav-link-active {
+  background-color: #e80000 !important;
 }
 
 .navbar-tiny {
   min-height: 4% !important;
   height: 4%;
-  background-color: #353535 !important;
+  background-color: #101010 !important;
 }
 
 .navbar-tiny img {
@@ -10050,9 +10053,19 @@ a:hover {
   color: #000000 !important;
 }
 
+#device-selection {
+  display: none;
+}
+
+#locations {
+  padding-left: 4px;
+  overflow-y: scroll !important;
+  max-height: 65%;
+}
+
 #map {
   height: 100%;
-  overflow-y: hidden;
+  overflow-y: hidden !important;
 }
 
 .navbar-laravel {
