@@ -1,7 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-    <h1>Add Device</h1>       
+<div class="container">
+    <br>
+    <h2>Add Device</h2>       
     {!! Form::open(['action' => 'DevicesController@store', 'method' => 'POST']) !!}
         <div class="form-group">
             {{Form::label('device_id', 'Device ID')}}
@@ -16,5 +18,6 @@
             {{Form::text('user', '', ['class' => 'form-control', 'placeholder' => 'Email'])}}
         </div>
         {{Form::submit('Submit', ['class'=> 'btn btn-dark'])}}
+</div>
     {!! Form::close() !!}
 @endsection

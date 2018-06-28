@@ -54,7 +54,7 @@ class DevicesController extends Controller
 
         //add into database
         $device = new Device;
-        $device->device_id = $request->input('device_id');
+        $device->id = $request->input('device_id');
         $device->imei = $request->input('imei');
         $device->save();
 
