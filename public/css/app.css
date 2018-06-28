@@ -10048,6 +10048,49 @@ a:hover {
   color: #c13232;
 }
 
+.blink-red {
+  color: #fff;
+  background-color: #e80000;
+  -webkit-animation: blink-red 1s infinite;
+          animation: blink-red 1s infinite;
+}
+
+@-webkit-keyframes blink-red {
+  0% {
+    opacity: 1;
+  }
+
+  75% {
+    opacity: 1;
+  }
+
+  76% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes blink-red {
+  0% {
+    opacity: 1;
+  }
+
+  75% {
+    opacity: 1;
+  }
+
+  76% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
 .dropdown-menu a {
   color: #000000 !important;
 }

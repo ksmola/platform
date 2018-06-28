@@ -21,6 +21,11 @@
                 <li class="list-group-item mt-1 mb-1">
                     <h4>{{$device->name}}</h4>
                     <small>IMEI: {{$device->imei}}</small>
+                    <?php
+                    if ($device->alarm) {
+                        echo '<div class="blink-red font-weight-bold float-right">ALARM</div>';
+                    }
+                    ?>
                 </li>
             </div></a>
         @endforeach
