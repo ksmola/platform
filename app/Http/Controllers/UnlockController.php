@@ -22,6 +22,7 @@ class UnlockController extends Controller
         $device = Device::where('id', $request->device_id)->first();
         $device->token_created = now()->toDateTimeString();
         $device->last_request = $request->ip();
+        $device->alarm = false;
 
         $device->new_token = (bin2hex(random_bytes(16)));
         $device->save();
@@ -47,7 +48,19 @@ class UnlockController extends Controller
         return $device;
 
     }
+    
+    public function alarm(Request $request) {
 
+        $this->validate($request, [
+            'device_id' => 'required', 
+        ]);
+
+        $device = Device::where('id', $request->device_id)->first();
+        $device->alarm = true;
+        $device->save();
+        return "ALARM!";
+
+    }
     /**
      * Display a listing of the resource.
      *
