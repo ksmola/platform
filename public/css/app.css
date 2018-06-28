@@ -49,7 +49,7 @@ html {
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   -ms-overflow-style: scrollbar;
-  -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 @-ms-viewport {
@@ -10009,8 +10009,7 @@ a:hover {
 }
 
 .navbar {
-  min-height: 6% !important;
-  height: 6%;
+  height: 25px;
   color: #fff !important;
 }
 
@@ -10033,7 +10032,7 @@ a:hover {
 
 .navbar-tiny {
   min-height: 4% !important;
-  height: 4%;
+  height: 35px;
   background-color: #101010 !important;
 }
 
@@ -10051,6 +10050,10 @@ a:hover {
 
 .dropdown-menu a {
   color: #000000 !important;
+}
+
+table {
+  margin: 0 auto;
 }
 
 #device-selection {

@@ -11,8 +11,9 @@ a:hover {
 }
 
 .navbar {
-    min-height: 6% !important;
-    height: 6%;
+    // min-height: 6% !important;
+    height: 25px;
+    // max-height: 6% !important;
     //background-color: #32c186 !important;
     color: #fff !important;
 }
@@ -36,7 +37,7 @@ a:hover {
 }
 .navbar-tiny {
     min-height: 4% !important;
-    height: 4%;
+    height: 35px;
     background-color: #101010 !important;
 }
 .navbar-tiny img {
@@ -53,6 +54,10 @@ a:hover {
 
 .dropdown-menu a {
     color: #000000 !important;
+}
+
+table {
+    margin: 0 auto;
 }
 
 #device-selection {

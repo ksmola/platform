@@ -19,7 +19,7 @@ class UnlockController extends Controller
             'device_id' => 'required', 
         ]);
 
-        $device = Device::where('device_id', $request->device_id)->first();
+        $device = Device::where('id', $request->device_id)->first();
         $device->token_created = now()->toDateTimeString();
         $device->last_request = $request->ip();
 
@@ -28,13 +28,14 @@ class UnlockController extends Controller
         return $device;
     }
 
+    // /update, gets called to confirm token and update token globally
     public function token_received(Request $request) {
 
         $this->validate($request, [
             'device_id' => 'required', 
         ]);
 
-        $device = Device::where('device_id', $request->device_id)->first();
+        $device = Device::where('id', $request->device_id)->first();
         $device->last_request_received = now()->toDateTimeString();
         $device->last_request = $request->ip();
         $device->responded = now()->toDateTimeString();

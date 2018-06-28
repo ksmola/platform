@@ -194,7 +194,6 @@
                             });
                             google.maps.event.addListenerOnce(map, 'idle', function(){
                                 $("#device-selection").fadeIn("slow");
-    // do something only the first time the map is loaded
                             }); 
                             $("#device-selection").change(function() {
                                 $.ajax({

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Device;
 use App\User;
+use App\Position;
 use Illuminate\Http\Request;
 
 class DevicesController extends Controller
@@ -21,10 +22,10 @@ class DevicesController extends Controller
     public function index()
     {
         if (auth()->user()->is_admin) {
-            $devices = Device::orderBy('device_id', 'asc')->paginate(5);
+            $devices = Device::orderBy('id', 'asc')->paginate(5);           
             return view('devices.index')->with('devices', $devices);
         }
-        $devices = Device::where('user_id', auth()->user()->id)->orderBy('device_id', 'asc')->paginate(5);
+        $devices = Device::where('user_id', auth()->user()->id)->orderBy('id', 'asc')->paginate(5);
         return view('devices.index')->with('devices', $devices);
     }
 
@@ -68,8 +69,13 @@ class DevicesController extends Controller
      */
     public function show($id)
     {
-        $device = Device::find($id);
-        return view('devices.show')->with('device', $device);
+        $devices = Device::find($id);            
+        $positions = Position::where('device_id',$devices->id)->latest()->firstOrFail();
+        // $positions = Position::where('device_id',$devices->id)->get();
+
+        // $positions = Position::latest()->first();
+        return view('devices.show')->with('device', $devices)->with('position', $positions);
+;
 
     }
 

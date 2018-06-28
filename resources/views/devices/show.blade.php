@@ -2,12 +2,14 @@
 
 @section('content')
 <div class="container">
+    <br>
     <a href="/devices" ><i class="green fas fa-chevron-circle-left"></i> Back</a>
     <a href="/devices/{{$device->id}}/edit" class="float-right"><i class="fas fa-edit green"></i> Edit</a>
 ￼
-    <h2>{{$device->device_id}}</h2>
+<h2 class="text-center">{{$device->name}}</h2>
 
-    <table class="table table-striped">
+
+    <table class="table table-striped w-50">
         <tbody>
             <tr>
                 <th scope="row">id</th>
@@ -15,7 +17,7 @@
             </tr>
             <tr>
                 <th scope="row">Device ID</th>
-                <td scope="row">{{$device->device_id}}</td>
+                <td scope="row">{{$device->id}}</td>
             </tr>
             <tr>
                 <th scope="row">User ID</th>
@@ -26,8 +28,8 @@
                 <td scope="row">{{$device->imei}}</td>
             </tr>
             <tr>
-                <th scope="row">Position</th>
-                <td scope="row">{{$device->position}}</td>
+                <th scope="row">Last Position</th>
+                <td scope="row">{{$position->lat}}, {{$position->lng}}</td>
             </tr>
             <tr>
                 <th scope="row">Token</th>

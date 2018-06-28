@@ -8,14 +8,15 @@
     ?>
     @else
     <div class="container">
-    <h1>Devices</h1>              
+    <br>
+    <h2>Devices</h2>              
     <p>Overview of all your mokis</p>
     <a class="float-right" href="/devices/create"><i class="green fas fa-plus-circle"></i> Add moki</a>
     <br>
 
     @if(count($devices) > 0)
         @foreach($devices as $device)
-        <a href="/devices/{{$device->device_id}}">
+        <a href="/devices/{{$device->id}}">
             <div class="list-group">
                 <li class="list-group-item mt-1 mb-1">
                     <h4>{{$device->name}}</h4>
