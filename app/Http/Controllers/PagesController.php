@@ -7,10 +7,12 @@ use App\User;
 
 class PagesController extends Controller
 {
+    public function __construct() {
+        $this->middleware('auth');
+    }
     public function index(){
-        $title = 'Good day!';
-        $user = User::where('id', auth()->user()->id)->first();
-        return view('pages.index', compact('title'))->with('user', $user);
+        $user = User::where('id', auth()->user()->id)->firstOrFail();
+        return view('pages.index')->with('user', $user);
     }
 
     public function about(){
