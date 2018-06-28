@@ -10091,7 +10091,11 @@ a:hover {
 }
 
 .dropdown-menu a {
-  color: #000000;
+  color: #000000 !important;
+}
+
+.dropdown-menu a:hover {
+  color: #000000 !important;
 }
 
 table {
