@@ -10009,7 +10009,6 @@ a:hover {
 }
 
 .navbar {
-  height: 25px;
   color: #fff !important;
 }
 
@@ -10092,7 +10091,7 @@ a:hover {
 }
 
 .dropdown-menu a {
-  color: #000000 !important;
+  color: #000000;
 }
 
 table {
@@ -10112,6 +10111,12 @@ table {
 #map {
   height: 100%;
   overflow-y: hidden !important;
+}
+
+@media (min-width: 768px) {
+  .navbar {
+    height: 25px;
+  }
 }
 
 .navbar-laravel {
