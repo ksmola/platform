@@ -5,6 +5,7 @@ use App\Device;
 use App\User;
 use App\Position;
 use Illuminate\Http\Request;
+use Illuminate\Database\Eloquent\ModelNotfoundException;
 
 class DevicesController extends Controller
 {
@@ -56,6 +57,13 @@ class DevicesController extends Controller
         $device = new Device;
         $device->id = $request->input('device_id');
         $device->imei = $request->input('imei');
+
+        try {
+            $device->user_id = User::where('email', $request->user)->firstOrFail()->id;
+        } catch(ModelNotFoundException $ex) {
+            return redirect('/devices/create')->with('error', 'Email/user combination not found!');
+        }
+        // $device->user_id = User::where('email', $request->user)->first()->id;
         $device->save();
 
         return redirect('/devices')->with('success', 'Device Added!');
@@ -70,7 +78,17 @@ class DevicesController extends Controller
     public function show($id)
     {
         $devices = Device::find($id);            
-        $positions = Position::where('device_id',$devices->id)->latest()->firstOrFail();
+        try {
+            $positions = Position::where('device_id',$devices->id)->latest()->firstOrFail();
+        } catch (ModelNotFoundException $ex) {
+            // $positions = 0;
+            $altpos = new DevicesController;
+            $altpos->lng = NULL;
+            $altpos->lat = NULL;
+            return view('devices.show')->with('device', $devices)->with('position', $altpos);
+            // return redirect('/devices');
+        }
+
         // $positions = Position::where('device_id',$devices->id)->get();
 
         // $positions = Position::latest()->first();
