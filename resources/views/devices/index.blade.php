@@ -20,7 +20,7 @@
             <div class="list-group">
                 <li class="list-group-item mt-1 mb-1">
                     <h4>{{$device->name}}</h4>
-                    <small>IMEI: {{$device->imei}}</small>
+                    <small>IMEI: {{$device->link_id}}</small>
                     <?php
                     if ($device->alarm) {
                         echo '<div class="blink-red font-weight-bold float-right">ALARM</div>';
