@@ -24,6 +24,14 @@
                 <td scope="row">{{$device->user_id}}</td>
             </tr>
             <tr>
+                <th scope="row">LINK-ID</th>
+                <td scope="row">{{$device->link_id}}</td>
+            </tr>
+            <tr>
+                <th scope="row">ICCID</th>
+                <td scope="row">{{$device->iccid}}</td>
+            </tr>
+            <tr>
                 <th scope="row">IMEI</th>
                 <td scope="row">{{$device->imei}}</td>
             </tr>

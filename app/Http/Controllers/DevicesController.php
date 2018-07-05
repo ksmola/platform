@@ -57,6 +57,9 @@ class DevicesController extends Controller
         $device = new Device;
         $device->id = $request->input('device_id');
         $device->imei = $request->input('imei');
+        $device->iccid = $request->input('iccid');
+        $device->link_id = $request->input('link_id');
+
 
         try {
             $device->user_id = User::where('email', $request->user)->firstOrFail()->id;

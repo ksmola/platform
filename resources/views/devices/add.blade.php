@@ -14,6 +14,14 @@
                 {{Form::text('imei', '', ['class' => 'form-control', 'placeholder' => 'IMEI'])}}
         </div>
         <div class="form-group">
+                {{Form::label('iccid', 'ICCID')}}
+                {{Form::text('iccid', '', ['class' => 'form-control', 'placeholder' => 'ICCID'])}}
+        </div>
+        <div class="form-group">
+                {{Form::label('link_id', 'LINK-ID')}}
+                {{Form::text('link_id', '', ['class' => 'form-control', 'placeholder' => 'LINK-ID'])}}
+        </div>
+        <div class="form-group">
             {{Form::label('user', 'Assign to user')}}
             {{Form::text('user', '', ['class' => 'form-control', 'placeholder' => 'Email'])}}
         </div>
